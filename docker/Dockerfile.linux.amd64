@@ -1,5 +1,6 @@
-FROM alpine:3.12
-RUN apk add --no-cache ca-certificates git git-lfs openssh curl perl aws-cli sudo
+FROM debian:12.1-slim
+RUN apt-get update
+RUN apt-get install ca-certificates git git-lfs ssh curl perl-base awscli sudo -y
 
 ADD posix/* /usr/local/bin/
 
